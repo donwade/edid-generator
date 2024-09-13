@@ -7,10 +7,12 @@ IHEX	:= $(patsubst %.S, %.bin.ihex, $(SOURCES))
 
 CODE	:= $(patsubst %.S, %.c, $(SOURCES))
 
-all:	$(BIN) $(IHEX) $(CODE)
+OTHER	:= $(patsubst %.S, %.txt, $(SOURCES))
+
+all:	$(BIN) $(IHEX) $(CODE) $(OTHER)
 
 clean:
-	rm -f *.o *.crc *.bin *.bin.ihex *.c
+	rm -f *.o *.crc *.bin *.bin.ihex *.c *.txt
 
 %.o:	%.S
 	cc -c -DCRC="0x00" -o $@ $^
@@ -34,4 +36,7 @@ clean:
 
 %.c:	%.bin
 	@echo "{" >$@; hexdump -f hex $^ >>$@; echo "};" >>$@
+
+%.txt:	%.bin
+	@echo "" >$@; hexdump  -e '16/1 " %02X" "\n"' $^ >>$@; echo "" >>$@
 
