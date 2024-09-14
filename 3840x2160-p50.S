@@ -5,7 +5,7 @@
 #define XPULSE 88
 #define YPIX 2160
 #define XPIX 3840
-#define VFREQ 60
+#define VFREQ 50
 #define DPI 96
 #define CLOCK 594000
 #define VERSION 1

@@ -34,7 +34,7 @@
 #define YOFFSET (63+4)
 #define YPULSE (63+5)
 #define DPI 96
-#define VFREQ 60 /* Hz */
+#define VFREQ 30 /* Hz */
 #define TIMING_NAME "Linux FHD"
 /* No ESTABLISHED_TIMINGx_BITS */
 #define HSYNC_POL 1

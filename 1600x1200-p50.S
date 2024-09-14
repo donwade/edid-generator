@@ -34,7 +34,7 @@
 #define YOFFSET (63+1)
 #define YPULSE (63+3)
 #define DPI 72
-#define VFREQ 60 /* Hz */
+#define VFREQ 50 /* Hz */
 #define TIMING_NAME "Linux UXGA"
 /* No ESTABLISHED_TIMINGx_BITS */
 #define HSYNC_POL 1
